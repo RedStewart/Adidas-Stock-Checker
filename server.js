@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Profile route
-// app.use('/api', require('./routes/stock'));
+app.use('/api/stock', require('./routes/stock'));
 
 const port = process.env.PORT || 5000;
 
