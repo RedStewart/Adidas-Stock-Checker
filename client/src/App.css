@@ -1,5 +1,95 @@
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-Thin.otf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-ExtraLight.otf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-Light.otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-Medium.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-SemiBold.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-Bold.otf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-ExtraBold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Vistol;
+  src: url('./assets/font/VistolSans-Black.otf');
+  font-weight: 800;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Vistol, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.active {
+  color: #624ad0 !important;
+  border-left: 4px solid #624ad0;
+}
+
+/* Navbar */
+#navbar {
+  background: #fff;
+  border-right: 2px solid #f6f6f6;
+  height: 100vh;
+  max-width: 260px;
+  color: #333;
+}
+
+#navbar h1 {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+#navbar ul li {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding: 0 3rem;
+  color: #bbb;
+  width: 100%;
 }
