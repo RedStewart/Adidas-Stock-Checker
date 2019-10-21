@@ -119,16 +119,11 @@ ul {
 /* Searchbar */
 #searchbar form {
   display: flex;
-  justify-content: space-evenly;
-}
-
-#searchbar h2 {
-  display: inline;
-  font-size: 1.2rem;
+  justify-content: flex-end;
 }
 
 #searchbar .input-item {
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   padding: 0.5rem 1.5rem;
   font-family: Vistol, sans-serif;
   font-weight: 400;
