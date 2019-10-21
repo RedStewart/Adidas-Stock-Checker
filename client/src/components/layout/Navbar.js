@@ -7,14 +7,11 @@ const Navbar = () => {
 
       <ul>
         <li className='active'>
-          <i class='fas fa-shoe-prints'></i> Adidas
-        </li>
-        <li>
-          <i class='fas fa-shoe-prints'></i> Adidas
+          <i className='fas fa-cubes'></i> Adidas
         </li>
 
         <li className='live'>
-          <i class='fas fa-compact-disc'></i> Live Drop
+          <i className='fas fa-compact-disc'></i> Live Drop
         </li>
       </ul>
     </nav>
