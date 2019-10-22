@@ -8,4 +8,9 @@ const Spinner = ({fillColor}) => {
     )
 }
 
+Spinner.defaultProps = {
+    fillColor: '#333',
+};
+
+
 export default Spinner

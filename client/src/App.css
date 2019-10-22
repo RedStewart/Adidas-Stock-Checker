@@ -62,7 +62,7 @@ body {
   font-size: 1rem;
 }
 
-main {
+.container {
   margin-left: var(--sidebar-width);
   padding: 0 1rem;
   background: #f6f6f6;
@@ -81,10 +81,6 @@ ul {
   color: #624ad0 !important;
   border-right: 4px solid #624ad0;
   background: #daddff;
-}
-
-.spinner {
-  fill: 'red';
 }
 
 /* Navbar */

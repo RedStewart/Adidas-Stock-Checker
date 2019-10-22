@@ -2,17 +2,14 @@ import React from 'react';
 import './App.css';
 
 import Navbar from './components/layout/Navbar';
-import Search from './components/layout/Search';
-import Spinner from './components/layout/Spinner';
+import Adidas from './components/pages/Adidas';
 
-function App() {
+
+const App = () => {
   return (
-    <div className='App'>
+    <div>
       <Navbar />
-      <main>
-        <Search />
-        <Spinner fillColor='#333' />
-      </main>
+      <Adidas />
     </div>
   );
 }
