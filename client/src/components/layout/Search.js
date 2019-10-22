@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import AdidasContext from '../../context/adidas/adidasContext';
 
 const Search = () => {
   const [formData, setFormData] = useState({
@@ -6,9 +7,22 @@ const Search = () => {
     region: ''
   });
 
+  const adidasContext = useContext(AdidasContext);
+  const { getProduct } = adidasContext;
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    if (formData.pid === '') {
+      console.log('PID is empty');
+    } else {
+      getProduct(formData.pid);
+    }
+  };
+
   return (
     <section id='searchbar'>
-      <form>
+      <form onSubmit={onSubmit}>
         <input
           className='input-item'
           type='text'
