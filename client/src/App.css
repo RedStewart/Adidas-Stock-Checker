@@ -83,6 +83,10 @@ ul {
   background: #daddff;
 }
 
+.spinner {
+  fill: 'red';
+}
+
 /* Navbar */
 #navbar {
   background: #fff;
@@ -129,6 +133,6 @@ ul {
   font-weight: 400;
   font-size: 1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 200px;
 }
