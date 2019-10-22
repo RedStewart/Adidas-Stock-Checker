@@ -19,9 +19,10 @@ const Search = () => {
         <select
           name='region'
           className='input-item'
+          defaultValue='Region'
           onChange={e => setFormData({ ...formData, region: e.target.value })}
         >
-          <option value='' disabled selected>
+          <option value='Region' disabled>
             Region
           </option>
           <option value='.co.nz'>NZ</option>

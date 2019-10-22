@@ -62,10 +62,8 @@ body {
   font-size: 1rem;
 }
 
-.container {
+.main-container {
   margin-left: var(--sidebar-width);
-  padding: 0 1rem;
-  background: #f6f6f6;
 }
 
 ul {
@@ -117,6 +115,10 @@ ul {
 }
 
 /* Searchbar */
+#searchbar {
+  background: linear-gradient(to right, #9380f4, #63addb);
+}
+
 #searchbar form {
   display: flex;
   justify-content: flex-end;

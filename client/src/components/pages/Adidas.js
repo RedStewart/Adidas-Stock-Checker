@@ -4,7 +4,7 @@ import Spinner from '../layout/Spinner';
 
 const Adidas = () => {
     return (
-        <section className='container'>
+        <section className='main-container'>
             <Search />
             <Spinner />
             <h1>Adidas page</h1>

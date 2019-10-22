@@ -3,15 +3,15 @@ import './App.css';
 
 import Navbar from './components/layout/Navbar';
 import Adidas from './components/pages/Adidas';
-
+import AdidasState from './context/adidas/AdidasState';
 
 const App = () => {
   return (
-    <div>
+    <AdidasState>
       <Navbar />
       <Adidas />
-    </div>
+    </AdidasState>
   );
-}
+};
 
 export default App;
