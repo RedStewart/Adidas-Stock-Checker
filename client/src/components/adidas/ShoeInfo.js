@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AdidasContext from '../../context/adidas/adidasContext';
+import ShoeImage from './ShoeImage';
 
 const ShoeInfo = () => {
   const adidasContext = useContext(AdidasContext);
@@ -15,10 +16,15 @@ const ShoeInfo = () => {
       <h3>Price: ${product.pricing_information.currentPrice}.00</h3>
       <h4>
         URL:{' '}
-        <a href={'https:' + product.meta_data.canonical} target='_blank'>
+        <a
+          href={'https:' + product.meta_data.canonical}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           {product.meta_data.canonical.substring(2)}
         </a>
       </h4>
+      <ShoeImage images={imageArr} />
     </>
   );
 };
