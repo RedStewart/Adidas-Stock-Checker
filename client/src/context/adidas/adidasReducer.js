@@ -11,13 +11,24 @@ export default (state, action) => {
       return {
         ...state,
         product: action.payload,
-        loading: false
+        loading: false,
+        productError: null
+      };
+
+    case GET_PRODUCT_STOCK:
+      return {
+        ...state,
+        productStock: action.payload,
+        loading: false,
+        productError: null
       };
 
     case PRODUCT_ERROR:
       return {
         ...state,
         productError: action.payload,
+        product: null,
+        productStock: null,
         loading: false
       };
 

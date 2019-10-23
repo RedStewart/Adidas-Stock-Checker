@@ -20,17 +20,34 @@ const AdidasState = props => {
   const [state, dispatch] = useReducer(AdidasReducer, initialState);
 
   const getProduct = async pid => {
+    let pidUpper = pid.toUpperCase();
     setLoading();
-
     try {
-      const res = await axios.get(`/api/stock/${pid}`);
+      const res = await axios.get(`/api/stock/${pidUpper}`);
 
       dispatch({
         type: GET_PRODUCT,
         payload: res.data
       });
     } catch (err) {
-      console.log(err);
+      dispatch({
+        type: PRODUCT_ERROR,
+        payload: err.response.data
+      });
+    }
+  };
+
+  const getProductStock = async (pid, region) => {
+    let pidUpper = pid.toUpperCase();
+    setLoading();
+    try {
+      const res = await axios.get(`/api/stock/nz/${pidUpper}`);
+
+      dispatch({
+        type: GET_PRODUCT_STOCK,
+        payload: res.data
+      });
+    } catch (err) {
       dispatch({
         type: PRODUCT_ERROR,
         payload: err.response.data
@@ -39,7 +56,10 @@ const AdidasState = props => {
   };
 
   // set loading
-  const setLoading = () => dispatch({ type: SET_LOADING });
+  const setLoading = () => {
+    console.log('In loading');
+    dispatch({ type: SET_LOADING });
+  };
 
   return (
     <AdidasContext.Provider
@@ -48,7 +68,8 @@ const AdidasState = props => {
         product: state.product,
         loading: state.loading,
         productError: state.productError,
-        getProduct
+        getProduct,
+        getProductStock
       }}
     >
       {props.children}

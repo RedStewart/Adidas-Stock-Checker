@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import Search from '../layout/Search';
 import Spinner from '../layout/Spinner';
 
-const Adidas = () => {
-    return (
-        <section className='main-container'>
-            <Search />
-            <Spinner />
-            <h1>Adidas page</h1>
-        </section>
-    )
-}
+import AdidasContext from '../../context/adidas/adidasContext';
 
-export default Adidas
+const Adidas = () => {
+  const adidasContext = useContext(AdidasContext);
+  const { loading } = adidasContext;
+
+  return (
+    <section className='main-container'>
+      <Search />
+      {loading && <Spinner />}
+
+      <h1>Adidas page</h1>
+    </section>
+  );
+};
+
+export default Adidas;
