@@ -23,16 +23,17 @@ const AdidasState = props => {
     setLoading();
 
     try {
-      const res = await axios.get(`/api/${pid}`);
+      const res = await axios.get(`/api/stock/${pid}`);
 
       dispatch({
         type: GET_PRODUCT,
         payload: res.data
       });
     } catch (err) {
+      console.log(err);
       dispatch({
         type: PRODUCT_ERROR,
-        payload: err.response.msg
+        payload: err.response.data
       });
     }
   };
