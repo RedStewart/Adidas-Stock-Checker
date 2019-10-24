@@ -90,6 +90,11 @@ ul {
   background: #daddff;
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .py-1 {
   padding: 1rem 0;
 }

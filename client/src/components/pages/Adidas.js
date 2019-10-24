@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import Search from '../layout/Search';
-import ShoeInfo from '../adidas/ShoeInfo';
 import Spinner from '../layout/Spinner';
+import ShoeInfo from '../adidas/ShoeInfo';
+import ShoeStock from '../adidas/ShoeStock';
 
 import AdidasContext from '../../context/adidas/adidasContext';
 
@@ -17,7 +18,10 @@ const Adidas = () => {
       <Search />
       {loading && <Spinner></Spinner>}
       {product ? (
-        <ShoeInfo></ShoeInfo>
+        <div className='grid-2 container'>
+          <ShoeInfo />
+          <ShoeStock />
+        </div>
       ) : (
         <h2>Make component for "Search for a product"</h2>
       )}

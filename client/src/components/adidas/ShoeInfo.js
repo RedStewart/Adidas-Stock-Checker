@@ -9,7 +9,7 @@ const ShoeInfo = () => {
   const imageArr = product.view_list;
 
   return (
-    <section id='shoe-info' className='container'>
+    <section id='shoe-info'>
       <h2>{product.name}</h2>
       <div className='px-1'>
         <h3>{product.attribute_list.color}</h3>
