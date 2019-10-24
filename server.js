@@ -4,7 +4,6 @@ const app = express();
 
 app.use(morgan('dev'));
 
-// Profile route
 app.use('/api/stock', require('./routes/stock'));
 
 const port = process.env.PORT || 5000;
