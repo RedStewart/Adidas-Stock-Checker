@@ -1,0 +1,22 @@
+[
+  {
+    "regionName": "US",
+    "domain": ".com"
+  },
+  {
+    "regionName": "UK",
+    "domain": ".co.uk"
+  },
+  {
+    "regionName": "AU",
+    "domain": ".com.au"
+  },
+  {
+    "regionName": "NZ",
+    "domain": ".co.nz"
+  },
+  {
+    "regionName": "CA",
+    "domain": ".ca"
+  }
+]

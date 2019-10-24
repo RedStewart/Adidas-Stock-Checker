@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import AdidasContext from '../../context/adidas/adidasContext';
+const regionArr = require('../../assets/region.json');
 
 const Search = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const Search = () => {
     if (formData.pid === '') {
       console.log('PID is empty');
     } else {
-      getAllProductInfo(formData.pid, 'nz');
+      getAllProductInfo(formData.pid, formData.region);
     }
   };
 
@@ -34,13 +35,19 @@ const Search = () => {
           name='region'
           className='input-item'
           defaultValue='Region'
-          onChange={e => setFormData({ ...formData, region: e.target.value })}
+          onChange={e =>
+            setFormData({
+              ...formData,
+              region: e.target.options[e.target.selectedIndex].text
+            })
+          }
         >
           <option value='Region' disabled>
             Region
           </option>
-          <option value='.co.nz'>NZ</option>
-          <option value='.com.au'>AU</option>
+          {regionArr.map(region => (
+            <option value={region.domain}>{region.regionName}</option>
+          ))}
         </select>
         <button className='input-item'>Search</button>
       </form>

@@ -60,7 +60,7 @@ const AdidasState = props => {
     let pidUpper = pid.toUpperCase();
     setLoading();
     try {
-      const resStock = await axios.get(`/api/stock/nz/${pidUpper}`);
+      const resStock = await axios.get(`/api/stock/${region}/${pidUpper}`);
       const resInfo = await axios.get(`/api/stock/${pidUpper}`);
       const productInfo = { resStock: resStock.data, resInfo: resInfo.data };
 
