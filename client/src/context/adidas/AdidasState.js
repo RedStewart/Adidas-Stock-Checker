@@ -62,15 +62,14 @@ const AdidasState = props => {
     try {
       const resStock = await axios.get(`/api/stock/nz/${pidUpper}`);
       const resInfo = await axios.get(`/api/stock/${pidUpper}`);
+      const productInfo = { resStock: resStock.data, resInfo: resInfo.data };
 
       dispatch({
         type: GET_ALL_PRODUCT_INFO,
-        payload: {
-          resStock: resStock.data,
-          resInfo: resInfo.data
-        }
+        payload: productInfo
       });
     } catch (err) {
+      console.log(err);
       dispatch({
         type: PRODUCT_ERROR,
         payload: err.response.data

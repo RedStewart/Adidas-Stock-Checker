@@ -7,7 +7,10 @@ import AdidasContext from '../../context/adidas/adidasContext';
 
 const Adidas = () => {
   const adidasContext = useContext(AdidasContext);
-  const { product, loading } = adidasContext;
+  const { product, productStock, loading } = adidasContext;
+
+  console.log('Product: ', product);
+  console.log('ProductStock: ', productStock);
 
   return (
     <section className='main-container'>
