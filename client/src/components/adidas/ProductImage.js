@@ -1,10 +1,8 @@
 import React from 'react';
 
-const ShoeImage = ({ images }) => {
-  // images.shift();
+const ProductImage = ({ images }) => {
+  // Remove first item from array
   images.splice(0, 1);
-
-  console.log(images);
 
   return (
     <>
@@ -15,4 +13,4 @@ const ShoeImage = ({ images }) => {
   );
 };
 
-export default ShoeImage;
+export default ProductImage;

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import AdidasContext from '../../context/adidas/adidasContext';
-import ShoeImage from './ShoeImage';
+import ProductImage from './ProductImage';
 
-const ShoeInfo = () => {
+const ProductInfo = () => {
   const adidasContext = useContext(AdidasContext);
   const { product } = adidasContext;
 
@@ -16,8 +16,9 @@ const ShoeInfo = () => {
         <h3>
           PID: {product.id} <span className='px-2'>|</span> Price: $
           {product.pricing_information.currentPrice}
-          .00 <span className='px-1'>|</span> URL
+          .00
         </h3>
+        <h3>URL</h3>
         {/* <h4>
           URL:{' '}
           <a
@@ -28,10 +29,10 @@ const ShoeInfo = () => {
             {product.meta_data.canonical.substring(2)}
           </a>
         </h4> */}
-        <ShoeImage images={imageArr} />
+        <ProductImage images={imageArr} />
       </div>
     </section>
   );
 };
 
-export default ShoeInfo;
+export default ProductInfo;
