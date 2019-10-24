@@ -95,6 +95,11 @@ ul {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .py-1 {
   padding: 1rem 0;
 }
@@ -168,9 +173,18 @@ ul {
   width: 200px;
 }
 
-/* Shoe Info */
+/* Product Info */
 
-#shoe-info h2 {
+#product-info h2 {
   font-size: 3rem;
   line-height: 0.8;
+}
+
+/* Product Stock */
+#product-stock .stock-item {
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 0.5rem;
+  padding: 1rem;
+  text-align: center;
 }

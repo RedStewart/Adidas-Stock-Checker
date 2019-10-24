@@ -78,10 +78,7 @@ const AdidasState = props => {
   };
 
   // set loading
-  const setLoading = () => {
-    console.log('In loading');
-    dispatch({ type: SET_LOADING });
-  };
+  const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
     <AdidasContext.Provider

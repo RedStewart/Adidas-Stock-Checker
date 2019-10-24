@@ -7,11 +7,13 @@ const ProductStock = () => {
   const { availability_status, variation_list } = adidasContext.productStock;
 
   return (
-    <div>
+    <div id='product-stock'>
       <h2>Product Stock</h2>
       <h2>Product Availability: {availability_status.replace(/_/g, ' ')}</h2>
-      {variation_list &&
-        variation_list.map(stockItem => <StockItem stock={stockItem} />)}
+      <div className='grid-4'>
+        {variation_list &&
+          variation_list.map(stockItem => <StockItem stock={stockItem} />)}
+      </div>
     </div>
   );
 };
