@@ -8,7 +8,7 @@ const Search = () => {
   });
 
   const adidasContext = useContext(AdidasContext);
-  const { getProduct, getProductStock, getAllProductInfo } = adidasContext;
+  const { getAllProductInfo } = adidasContext;
 
   const onSubmit = e => {
     e.preventDefault();
@@ -16,8 +16,6 @@ const Search = () => {
     if (formData.pid === '') {
       console.log('PID is empty');
     } else {
-      // getProduct(formData.pid);
-      // getProductStock(formData.pid, 'nz');
       getAllProductInfo(formData.pid, 'nz');
     }
   };

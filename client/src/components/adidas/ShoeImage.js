@@ -8,7 +8,6 @@ const ShoeImage = ({ images }) => {
 
   return (
     <>
-      <h1>yeet</h1>
       {images.map(image => (
         <img src={image.image_url} alt='' width='200' />
       ))}

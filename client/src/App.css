@@ -48,6 +48,7 @@
 
 :root {
   --sidebar-width: 260px;
+  --primary-color: #624ad0;
 }
 
 * {
@@ -66,6 +67,10 @@ body {
   margin-left: var(--sidebar-width);
 }
 
+.container {
+  margin: 2rem 2.5rem;
+}
+
 ul {
   list-style: none;
 }
@@ -75,10 +80,34 @@ ul {
   text-align: center;
 }
 
+.text-primary {
+  color: var(--primary-color);
+}
+
 .active {
   color: #624ad0 !important;
-  border-right: 4px solid #624ad0;
+  border-right: 4px solid var(--primary-color);
   background: #daddff;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+.px-2 {
+  padding: 0 2rem;
+}
+.px-3 {
+  padding: 0 3rem;
 }
 
 /* Navbar */
@@ -132,4 +161,11 @@ ul {
   border: none;
   border-radius: 5px;
   width: 200px;
+}
+
+/* Shoe Info */
+
+#shoe-info h2 {
+  font-size: 3rem;
+  line-height: 0.8;
 }
