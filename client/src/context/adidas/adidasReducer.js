@@ -1,6 +1,7 @@
 import {
   GET_PRODUCT,
   GET_PRODUCT_STOCK,
+  GET_ALL_PRODUCT_INFO,
   PRODUCT_ERROR,
   SET_LOADING
 } from '../types';
@@ -19,6 +20,15 @@ export default (state, action) => {
       return {
         ...state,
         productStock: action.payload,
+        loading: false,
+        productError: null
+      };
+
+    case GET_ALL_PRODUCT_INFO:
+      return {
+        ...state,
+        productStock: action.payload.resStock,
+        product: action.payload.resInfo,
         loading: false,
         productError: null
       };

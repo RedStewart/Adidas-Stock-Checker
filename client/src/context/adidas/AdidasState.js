@@ -5,6 +5,7 @@ import axios from 'axios';
 import {
   GET_PRODUCT,
   GET_PRODUCT_STOCK,
+  GET_ALL_PRODUCT_INFO,
   PRODUCT_ERROR,
   SET_LOADING
 } from '../types';
@@ -55,6 +56,28 @@ const AdidasState = props => {
     }
   };
 
+  const getAllProductInfo = async (pid, region) => {
+    let pidUpper = pid.toUpperCase();
+    setLoading();
+    try {
+      const resStock = await axios.get(`/api/stock/nz/${pidUpper}`);
+      const resInfo = await axios.get(`/api/stock/${pidUpper}`);
+
+      dispatch({
+        type: GET_ALL_PRODUCT_INFO,
+        payload: {
+          resStock: resStock.data,
+          resInfo: resInfo.data
+        }
+      });
+    } catch (err) {
+      dispatch({
+        type: PRODUCT_ERROR,
+        payload: err.response.data
+      });
+    }
+  };
+
   // set loading
   const setLoading = () => {
     console.log('In loading');
@@ -69,7 +92,8 @@ const AdidasState = props => {
         loading: state.loading,
         productError: state.productError,
         getProduct,
-        getProductStock
+        getProductStock,
+        getAllProductInfo
       }}
     >
       {props.children}
