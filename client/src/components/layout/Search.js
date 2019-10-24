@@ -14,7 +14,7 @@ const Search = () => {
   const onSubmit = e => {
     e.preventDefault();
 
-    if (formData.pid === '') {
+    if (formData.pid === '' || formData.region === '') {
       console.log('PID is empty');
     } else {
       getAllProductInfo(formData.pid, formData.region);
