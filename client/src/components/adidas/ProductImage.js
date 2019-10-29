@@ -2,14 +2,19 @@ import React from 'react';
 
 const ProductImage = ({ images }) => {
   // Remove first item from array
-  images.splice(0, 1);
+  // images.splice(0, 1);
 
   return (
-    <>
-      {images.map(image => (
-        <img src={image.image_url} alt='' width='200' />
-      ))}
-    </>
+    <div id='image-flex'>
+      <img
+        src={images[0].image_url}
+        alt='Product Image'
+        className='main-image'
+      />
+      {/* <img src={images[0].image_url} alt='' className='main-image' />
+      <img src={images[2].image_url} alt='' className='main-image' />
+      <img src={images[3].image_url} alt='' className='main-image' /> */}
+    </div>
   );
 };
 

@@ -10,26 +10,23 @@ const ProductInfo = () => {
 
   return (
     <section id='product-info'>
+      <ProductImage images={imageArr} />
+
       <h2>{product.name}</h2>
-      <div className='px-1'>
+      <div className=''>
         <h3>{product.attribute_list.color}</h3>
         <h3>
           PID: {product.id} <span className='px-2'>|</span> Price: $
           {product.pricing_information.currentPrice}
-          .00
-        </h3>
-        <h3>URL</h3>
-        {/* <h4>
-          URL:{' '}
+          .00 <span className='px-2'>|</span>
           <a
-            href={'https:' + product.meta_data.canonical}
+            href={`https:${product.meta_data.canonical}`}
             target='_blank'
             rel='noopener noreferrer'
           >
-            {product.meta_data.canonical.substring(2)}
+            URL
           </a>
-        </h4> */}
-        <ProductImage images={imageArr} />
+        </h3>
       </div>
     </section>
   );
