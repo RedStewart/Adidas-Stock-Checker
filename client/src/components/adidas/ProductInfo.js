@@ -9,24 +9,36 @@ const ProductInfo = () => {
   const imageArr = product.view_list;
 
   return (
-    <section id='product-info'>
-      <ProductImage images={imageArr} />
+    <section id='product-section'>
+      <h3>Product</h3>
 
-      <h2>{product.name}</h2>
-      <div className=''>
-        <h3>{product.attribute_list.color}</h3>
-        <h3>
-          PID: {product.id} <span className='px-2'>|</span> Price: $
-          {product.pricing_information.currentPrice}
-          .00 <span className='px-2'>|</span>
+      <div id='product-info'>
+        <ProductImage images={imageArr} />
+
+        <h2>{product.name}</h2>
+        <h3 className='product-color'>{product.attribute_list.color}</h3>
+        <div className='product-data'>
+          <h3>
+            PID
+            <br />
+            <span>{product.id}</span>
+          </h3>
+          <h3>
+            Price
+            <br />
+            <span>${product.pricing_information.currentPrice}.00</span>
+          </h3>
+          <h3>Region</h3>
+
           <a
             href={`https:${product.meta_data.canonical}`}
             target='_blank'
             rel='noopener noreferrer'
+            className='product-url btn'
           >
             URL
           </a>
-        </h3>
+        </div>
       </div>
     </section>
   );

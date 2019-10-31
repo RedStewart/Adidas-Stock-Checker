@@ -8,7 +8,7 @@ const StockItem = props => {
       className='stock-item'
       style={
         availability_status === 'IN_STOCK'
-          ? { borderColor: '#4cd137' }
+          ? { borderColor: '#26de81' }
           : { borderColor: '#e84118' }
       }
     >

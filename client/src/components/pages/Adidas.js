@@ -15,7 +15,7 @@ const Adidas = () => {
       <Search />
       {loading && <Spinner></Spinner>}
       {product && productStock ? (
-        <div className='grid-2 container'>
+        <div id='adidas-page'>
           <ProductInfo />
           <ProductStock />
         </div>

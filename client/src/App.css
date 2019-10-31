@@ -48,7 +48,8 @@
 
 :root {
   --sidebar-width: 260px;
-  --primary-color: #624ad0;
+  --primary-color: #273c75;
+  --secondary-color: #5352ed;
 }
 
 * {
@@ -84,8 +85,22 @@ ul {
   color: var(--primary-color);
 }
 
+.btn {
+  text-decoration: none;
+  padding: 0.4rem 1.5rem;
+  color: #fff;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.btn:hover {
+  background: var(--primary-color);
+}
+
 .active {
-  color: #624ad0 !important;
+  color: var(--secondary-color) !important;
   border-right: 4px solid var(--primary-color);
   background: #daddff;
 }
@@ -154,7 +169,11 @@ ul {
 
 /* Searchbar */
 #searchbar {
-  background: linear-gradient(to right, #9380f4, #63addb);
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 
 #searchbar form {
@@ -173,18 +192,72 @@ ul {
   width: 200px;
 }
 
+/* Adidas Page */
+#adidas-page {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 2.5rem;
+  background: #f4f7ff;
+  color: #333;
+}
+
 /* Product Info */
+#product-section {
+  flex: 1;
+}
+
+#product-section h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
 #product-info {
-  /* margin: auto; */
   text-align: center;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  margin-right: 1rem;
 }
 
 #product-info h2 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 0.8;
 }
 
+#product-info .product-color {
+  font-weight: 300;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 1rem;
+}
+
+#product-info .product-data {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+#product-info .product-data h3 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+#product-info .product-data span {
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+#product-info .product-data .product-url {
+  display: inline-block;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  font-weight: 400;
+}
+
 /* Product Stock */
+#product-stock {
+  flex: 3;
+}
+
 #product-stock .stock-item {
   border: 3px solid black;
   border-radius: 5px;
@@ -194,10 +267,10 @@ ul {
 }
 
 /* Product Image */
-
 #image-flex .main-image {
   display: block;
   border-radius: 50%;
-  width: 40%;
+  width: 100%;
   margin: 0 auto;
+  margin-bottom: 1.5rem;
 }
