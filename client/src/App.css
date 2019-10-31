@@ -50,6 +50,7 @@
   --sidebar-width: 260px;
   --primary-color: #273c75;
   --secondary-color: #9796f0;
+  --light-color: #daddff;
 }
 
 * {
@@ -112,9 +113,13 @@ a {
 
 .nav-active {
   border-right: 4px solid var(--primary-color);
-  background: #daddff;
+  background: var(--light-color);
   color: var(--primary-color) !important;
 }
+
+/* .nav-active:hover {
+
+} */
 
 .grid-2 {
   display: grid;
@@ -166,14 +171,13 @@ a {
 #navbar ul li {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  /* padding: 0.4rem 2rem; */
-  /* color: #bbb; */
-  /* width: 100%; */
   cursor: pointer;
 }
 
 #navbar ul li a {
   display: block;
+  position: relative;
+
   padding: 0.4rem 2rem;
   color: var(--secondary-color);
 }
@@ -182,6 +186,30 @@ a {
   margin-right: 1rem;
   font-size: 2.25rem;
   vertical-align: middle;
+}
+
+#navbar ul li a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(45deg, var(--primary-color) 50%, transparent 50%);
+  z-index: -1;
+}
+
+#navbar ul li a,
+#navbar ul li a:after {
+  background-size: 300%;
+  background-position: 100%;
+  transition: 0.75s;
+}
+
+#navbar ul li a:hover:after,
+#navbar ul li a:not(.nav-active):hover {
+  background-position: 0;
+  color: #fff !important;
 }
 
 /* Searchbar */
