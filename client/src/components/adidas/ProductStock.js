@@ -15,15 +15,19 @@ const ProductStock = () => {
   };
 
   return (
-    <div id='product-stock'>
-      <h2>Product Stock</h2>
-      <h2>Product Availability: {availability_status.replace(/_/g, ' ')}</h2>
-      {variation_list && <h2>Total Stock: {getTotalStock()}</h2>}
-      <div className='grid-4'>
-        {variation_list &&
-          variation_list.map(stockItem => <StockItem stock={stockItem} />)}
+    <section id='product-stock-section'>
+      <h3 className='section-title'>Stock</h3>
+
+      <div id='product-stock'>
+        <h2>Product Stock</h2>
+        <h2>Product Availability: {availability_status.replace(/_/g, ' ')}</h2>
+        {variation_list && <h2>Total Stock: {getTotalStock()}</h2>}
+        <div className='grid-4'>
+          {variation_list &&
+            variation_list.map(stockItem => <StockItem stock={stockItem} />)}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

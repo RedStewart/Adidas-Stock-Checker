@@ -10,7 +10,7 @@ const ProductInfo = () => {
 
   return (
     <section id='product-section'>
-      <h3>Product</h3>
+      <h3 className='section-title'>Product</h3>
 
       <div id='product-info'>
         <ProductImage images={imageArr} />

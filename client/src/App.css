@@ -49,7 +49,7 @@
 :root {
   --sidebar-width: 260px;
   --primary-color: #273c75;
-  --secondary-color: #5352ed;
+  --secondary-color: #9796f0;
 }
 
 * {
@@ -76,6 +76,10 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Utilities */
 .text-center {
   text-align: center;
@@ -83,6 +87,13 @@ ul {
 
 .text-primary {
   color: var(--primary-color);
+}
+
+.section-title {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
 }
 
 .btn {
@@ -99,10 +110,10 @@ ul {
   background: var(--primary-color);
 }
 
-.active {
-  color: var(--secondary-color) !important;
+.nav-active {
   border-right: 4px solid var(--primary-color);
   background: #daddff;
+  color: var(--primary-color) !important;
 }
 
 .grid-2 {
@@ -155,10 +166,16 @@ ul {
 #navbar ul li {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  padding: 0.4rem 2rem;
-  color: #bbb;
-  width: 100%;
+  /* padding: 0.4rem 2rem; */
+  /* color: #bbb; */
+  /* width: 100%; */
   cursor: pointer;
+}
+
+#navbar ul li a {
+  display: block;
+  padding: 0.4rem 2rem;
+  color: var(--secondary-color);
 }
 
 #navbar ul li i {
@@ -206,12 +223,6 @@ ul {
   flex: 1;
 }
 
-#product-section h3 {
-  font-weight: 400;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
 #product-info {
   text-align: center;
   padding: 1.5rem;
@@ -239,6 +250,7 @@ ul {
 #product-info .product-data h3 {
   font-size: 1.75rem;
   font-weight: 400;
+  opacity: 1;
 }
 
 #product-info .product-data span {
@@ -254,8 +266,14 @@ ul {
 }
 
 /* Product Stock */
-#product-stock {
+#product-stock-section {
   flex: 3;
+}
+
+#product-stock {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
 }
 
 #product-stock .stock-item {
