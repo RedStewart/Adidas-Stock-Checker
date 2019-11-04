@@ -19,12 +19,32 @@ const ProductStock = () => {
       <h3 className='section-title'>Stock</h3>
 
       <div id='product-stock'>
-        <h2>Product Stock</h2>
-        <h2>Product Availability: {availability_status.replace(/_/g, ' ')}</h2>
-        {variation_list && <h2>Total Stock: {getTotalStock()}</h2>}
+        <div className='product-stock-info'>
+          <h2>
+            Product Availability: {availability_status.replace(/_/g, ' ')}
+          </h2>
+          {variation_list && <h2>Total Stock: {getTotalStock()}</h2>}
+        </div>
+
+        {adidasContext.productsFiltered === null ? (
+          <button
+            className='btn'
+            onClick={() => adidasContext.filterOOSProducts()}
+          >
+            Filter OOS Sizes
+          </button>
+        ) : (
+          <button className='btn' onClick={() => adidasContext.clearFilter()}>
+            Clear Filter
+          </button>
+        )}
+
         <div className='grid-4'>
-          {variation_list &&
-            variation_list.map(stockItem => <StockItem stock={stockItem} />)}
+          {adidasContext.productsFiltered !== null
+            ? adidasContext.productsFiltered.map(stockItem => (
+                <StockItem stock={stockItem} />
+              ))
+            : variation_list.map(stockItem => <StockItem stock={stockItem} />)}
         </div>
       </div>
     </section>

@@ -3,7 +3,9 @@ import {
   GET_PRODUCT_STOCK,
   GET_ALL_PRODUCT_INFO,
   PRODUCT_ERROR,
-  SET_LOADING
+  SET_LOADING,
+  FILTER_OOS_PRODUCT,
+  CLEAR_FILTER
 } from '../types';
 
 export default (state, action) => {
@@ -31,6 +33,22 @@ export default (state, action) => {
         product: action.payload.resInfo,
         loading: false,
         productError: null
+      };
+
+    case FILTER_OOS_PRODUCT:
+      return {
+        ...state,
+        productsFiltered: state.productStock.variation_list.filter(
+          stockItem => {
+            if (stockItem.availability !== 0) return stockItem;
+          }
+        )
+      };
+
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        productsFiltered: null
       };
 
     case PRODUCT_ERROR:

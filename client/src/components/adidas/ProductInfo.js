@@ -28,7 +28,6 @@ const ProductInfo = () => {
             <br />
             <span>${product.pricing_information.currentPrice}.00</span>
           </h3>
-          <h3>Region</h3>
 
           <a
             href={`https:${product.meta_data.canonical}`}

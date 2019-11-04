@@ -7,7 +7,9 @@ import {
   GET_PRODUCT_STOCK,
   GET_ALL_PRODUCT_INFO,
   PRODUCT_ERROR,
-  SET_LOADING
+  SET_LOADING,
+  FILTER_OOS_PRODUCT,
+  CLEAR_FILTER
 } from '../types';
 
 const AdidasState = props => {
@@ -15,7 +17,8 @@ const AdidasState = props => {
     productStock: null,
     product: null,
     loading: false,
-    productError: null
+    productError: null,
+    productsFiltered: null
   };
 
   const [state, dispatch] = useReducer(AdidasReducer, initialState);
@@ -77,6 +80,18 @@ const AdidasState = props => {
     }
   };
 
+  const filterOOSProducts = () => {
+    dispatch({
+      type: FILTER_OOS_PRODUCT
+    });
+  };
+
+  const clearFilter = () => {
+    dispatch({
+      type: CLEAR_FILTER
+    });
+  };
+
   // set loading
   const setLoading = () => dispatch({ type: SET_LOADING });
 
@@ -87,9 +102,12 @@ const AdidasState = props => {
         product: state.product,
         loading: state.loading,
         productError: state.productError,
+        productsFiltered: state.productsFiltered,
         getProduct,
         getProductStock,
-        getAllProductInfo
+        getAllProductInfo,
+        filterOOSProducts,
+        clearFilter
       }}
     >
       {props.children}
